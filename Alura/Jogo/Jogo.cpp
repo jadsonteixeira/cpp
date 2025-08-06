@@ -10,7 +10,7 @@ int main() {
     cout << "Adivinhe o numero secreto" << endl;
 
     cout << "Escolha o seu nível de dificuldade:" << endl;
-    cout << "Facil (F), Médio (M) ou Dificil (D)" << endl;
+    cout << "Facil (F), Medio (M) ou Dificil (D)" << endl;
 
     char dificuldade;
     cin >> dificuldade;
