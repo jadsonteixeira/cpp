@@ -5,12 +5,12 @@
 using namespace std;
 
 int main() {
-    cout << "**************************************" << endl;
-    cout << "* Bem-vindos ao jogo da adivinhação! *" << endl;
-    cout << "**************************************" << endl;
+    system("cls");
+
+    cout << "Adivinhe o numero secreto" << endl;
 
     cout << "Escolha o seu nível de dificuldade:" << endl;
-    cout << "Fácil (F), Médio (M) ou Difícil (D)" << endl;
+    cout << "Facil (F), Médio (M) ou Dificil (D)" << endl;
 
     char dificuldade;
     cin >> dificuldade;
