@@ -1,0 +1,43 @@
+int x = 10;
+int *p = &x // p guarda o endereço de x
+
+p -> guarda algo como 0x61ff0c (endereço de memória)
+*p -> acessa o valor que está nesse endereço, ou seja, 10;
+
+Quando você cria um vetor:
+int numeros[5] = {1, 2, 3, 4, 5};
+
+O nome do vetor (numeros) é interpretado pelo C++ como o endereço do primeiro elemento (&numeros[0])
+
+Então, se fazemos:
+int *ptr = numeros;
+Significa que ptr aponta para o primeiro elemento
+
+ptr -> endereço numeros[0]
+*ptr -> valor de numeros[0], ou seja, 1
+
+ptr + i ???
+
+Um detalhe importante em C/C++, ponteiros conhecem o tipo de dado para qual apontam
+
+Ou seja:
+- ptr + 1 não significa avançar 1 byte, significa avançar o tamanho de um int em memória
+- Se um int ocupa 4 bytes, ptr + 1 vai para o endereço ptr + 4 bytes, que é justamente onde está numeros[1]
+
+Então:
+- *(prt + 0) -> acessa numeros[0]
+- *(prt + 1) -> acessa numeros[3]
+- *(prt + 2) -> acessa numeros[2]
+... e assim por diante
+
+Por isso funciona. O que acontece é:
+- ptr sabe o endereço inicial do vetor
+- Ao fazer ptr + i, você está dizendo "vá para o endereço do elemento i do vetor"
+- O * (operador de desreferência) pega o vaor armazenado nesse endereço
+
+Analogia
+Pense num prédio:
+- ptr é o número do primeiro apartamento
+- Cada andar tem exatamente 4 apartamentos (4 bytes, no caso do int)
+- Quando você faz ptr + i, você está subindo i andares no prédio
+- O * abre a porta do apartamento e mostra quem mora lá (o valor)
